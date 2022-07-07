@@ -30,7 +30,7 @@ breweries:[],
 USState:""
 }
 function getBreweriesFromState (){
-    fetch(`https://api.openbrewerydb.org/breweries?by_state=${state.breweries}`)
+    fetch(`https://api.openbrewerydb.org/breweries?by_state=${state.USState}`)
     .then(resp=>resp.json())
     .then(breweries=>{
         state.breweries=breweries
@@ -118,8 +118,8 @@ function render(){
     articleEl.append(UlEl)
 
     } 
+    document.body.append(articleEl)
      mainEl.append(headerEl, h1El,articleEl)
 
-     
 }
 render()
